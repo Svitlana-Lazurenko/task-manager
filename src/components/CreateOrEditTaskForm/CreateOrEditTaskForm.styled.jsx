@@ -30,7 +30,7 @@ export const Text = styled.span`
   font-size: 15px;
 `;
 
-export const Input = styled.input`
+export const InputText = styled.input`
   height: 35px;
   padding: 10px 25px;
   margin-top: 5px;
@@ -45,6 +45,43 @@ export const Input = styled.input`
   text-shadow: 0 0 1em rgb(53, 202, 8);
   font-family: monospace;
   letter-spacing: 5px;
+`;
+
+export const InputTextArea = styled.textarea`
+  resize: vertical;
+  //   height: 35px;
+  //   padding: 10px 25px;
+  //   margin-top: 5px;
+
+  //   background: transparent;
+  //   border-radius: 10px;
+  //   border: 2px solid rgb(53, 202, 8);
+  //   outline-color: rgb(53, 202, 8);
+
+  //   font-size: 20px;
+  //   color: rgb(240, 240, 240);
+  //   text-shadow: 0 0 1em rgb(53, 202, 8);
+  //   font-family: monospace;
+  //   letter-spacing: 5px;
+  //
+`;
+
+export const InputDate = styled.input`
+  //   height: 35px;
+  //   padding: 10px 25px;
+  //   margin-top: 5px;
+
+  //   background: transparent;
+  //   border-radius: 10px;
+  //   border: 2px solid rgb(53, 202, 8);
+  //   outline-color: rgb(53, 202, 8);
+
+  //   font-size: 20px;
+  //   color: rgb(240, 240, 240);
+  //   text-shadow: 0 0 1em rgb(53, 202, 8);
+  //   font-family: monospace;
+  //   letter-spacing: 5px;
+  //
 `;
 
 export const Button = styled.button`
