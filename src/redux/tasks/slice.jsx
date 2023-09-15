@@ -80,4 +80,4 @@ const tasksSlice = createSlice({
 });
 
 export const { turnOnEditMode, turnOffEditMode } = tasksSlice.actions;
-export const contactsReducer = tasksSlice.reducer;
+export const tasksReducer = tasksSlice.reducer;
