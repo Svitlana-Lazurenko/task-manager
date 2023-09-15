@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { createTask } from 'redux/tasks/operations';
+import { addTask } from 'redux/tasks/operations';
 import {
   Form,
   Label,
@@ -19,7 +19,7 @@ const CreateTaskForm = () => {
     const form = e.currentTarget;
 
     dispatch(
-      createTask({
+      addTask({
         name: form.elements.name.value,
         description: form.elements.description.value,
         dateStart: form.elements.dateStart.value,

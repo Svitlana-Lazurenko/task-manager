@@ -8,8 +8,14 @@ const CategoryList = () => {
 
   return (
     <List>
-      {categories.map(({ id, name, date }) => (
-        <CategoryItem key={id} name={name} date={date} id={id} />
+      {categories.map(({ _id, name, createdAt, numberOfTasks }) => (
+        <CategoryItem
+          key={_id}
+          id={_id}
+          name={name}
+          date={createdAt}
+          numberOfTasks={numberOfTasks}
+        />
       ))}
     </List>
   );

@@ -1,4 +1,4 @@
-import CreateOrEditForm from 'components/CreateOrEditForm/CreateOrEditForm';
+import CreateOrEditForm from 'components/CreateOrEditTaskForm/CreateOrEditTaskForm';
 // import Background from 'images/';
 
 const styles = {

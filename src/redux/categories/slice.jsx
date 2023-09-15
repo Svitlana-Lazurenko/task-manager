@@ -33,7 +33,7 @@ const categoriesSlice = createSlice({
       .addCase(fetchCategories.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.categoriesArr = action.payload;
+        state.categoriesArr = action.payload.categories;
       })
       .addCase(fetchCategories.rejected, handleRejected)
 
@@ -82,4 +82,4 @@ const categoriesSlice = createSlice({
 });
 
 export const { turnOnEditMode, turnOffEditMode } = categoriesSlice.actions;
-export const contactsReducer = categoriesSlice.reducer;
+export const categoriesReducer = categoriesSlice.reducer;

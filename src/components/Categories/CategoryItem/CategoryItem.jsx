@@ -1,13 +1,18 @@
 // import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Item, Text, Button, Wrapper } from './CategoryItem.styled';
 
 const CategoryItem = ({ id, name, numberOfTasks, date }) => {
   // const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const idCategory = id;
 
   const handleOnModalActions = () => {
     return;
   };
-  const handleOnNavigateTasks = () => {};
+  const handleOnNavigateTasks = id => {
+    navigate(`/tasks/${idCategory}`);
+  };
 
   return (
     <Item>
