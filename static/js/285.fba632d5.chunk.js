@@ -1,1 +1,0 @@
-(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[285],{285:function(){}}]);
