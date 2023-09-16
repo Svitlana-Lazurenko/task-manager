@@ -8,14 +8,14 @@ const TaskList = () => {
 
   return (
     <List>
-      {tasks.map(({ id, name, description, dateStart, dateEnd }) => (
+      {tasks.map(({ _id, name, description, dateStart, dateEnd }) => (
         <TaskItem
-          key={id}
+          key={_id}
           name={name}
           description={description}
           dateStart={dateStart}
           dateEnd={dateEnd}
-          id={id}
+          id={_id}
         />
       ))}
     </List>

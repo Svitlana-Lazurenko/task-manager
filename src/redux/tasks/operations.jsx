@@ -3,9 +3,9 @@ import axios from 'axios';
 
 export const fetchTasks = createAsyncThunk(
   'tasks/fetchAll',
-  async (_, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      const response = await axios.get('/api/tasks');
+      const response = await axios.get(`/api/tasks/${id}`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -15,9 +15,9 @@ export const fetchTasks = createAsyncThunk(
 
 export const addTask = createAsyncThunk(
   'tasks/addTask',
-  async (task, thunkAPI) => {
+  async (id, task, thunkAPI) => {
     try {
-      const response = await axios.post('/api/tasks', task);
+      const response = await axios.post(`/api/tasks/${id}`, task);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

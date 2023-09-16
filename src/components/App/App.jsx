@@ -12,7 +12,8 @@ const LoginPage = lazy(() => import('../../pages/Login'));
 const HomePage = lazy(() => import('../../pages/Home'));
 const CategoriesPage = lazy(() => import('../../pages/Categories'));
 const TasksPage = lazy(() => import('../../pages/Tasks'));
-const CreateOrEditTaskPage = lazy(() => import('../../pages/CreateOrEditTask'));
+const CreateTaskPage = lazy(() => import('../../pages/CreateTask'));
+const EditTaskPage = lazy(() => import('../../pages/EditTask'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -52,19 +53,23 @@ const App = () => {
             <PrivateRoute redirectTo="/login" component={<CategoriesPage />} />
           }
         />
+
         <Route
-          path="/tasks"
+          path="/tasks/:id"
           element={
             <PrivateRoute redirectTo="/login" component={<TasksPage />} />
           }
         />
         <Route
-          path="/create-or-edit-task"
+          path="/edit-task/:id"
           element={
-            <PrivateRoute
-              redirectTo="/login"
-              component={<CreateOrEditTaskPage />}
-            />
+            <PrivateRoute redirectTo="/login" component={<EditTaskPage />} />
+          }
+        />
+        <Route
+          path="/create-task/:id"
+          element={
+            <PrivateRoute redirectTo="/login" component={<CreateTaskPage />} />
           }
         />
       </Route>

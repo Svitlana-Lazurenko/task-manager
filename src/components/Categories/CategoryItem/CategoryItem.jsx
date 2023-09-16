@@ -5,13 +5,13 @@ import { Item, Text, Button, Wrapper } from './CategoryItem.styled';
 const CategoryItem = ({ id, name, numberOfTasks, date }) => {
   // const dispatch = useDispatch();
   const navigate = useNavigate();
-  const idCategory = id;
+  // const idCategory = id;
 
   const handleOnModalActions = () => {
     return;
   };
-  const handleOnNavigateTasks = id => {
-    navigate(`/tasks/${idCategory}`);
+  const handleOnNavigateTasks = () => {
+    navigate(`/tasks/${id}`);
   };
 
   return (

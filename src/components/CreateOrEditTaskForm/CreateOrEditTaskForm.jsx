@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addTask } from 'redux/tasks/operations';
+
 import {
   Form,
   Label,
@@ -46,11 +47,11 @@ const CreateTaskForm = () => {
       </Label>
       <Label>
         <Text> Name</Text>
-        <InputDate type="date" name="date-start" />
+        <InputDate type="date" name="dateStart" />
       </Label>
       <Label>
         <Text> Name</Text>
-        <InputDate type="date" name="date-end" />
+        <InputDate type="date" name="dateEnd" />
       </Label>
       <Button type="submit">
         Save

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import AddButton from 'components/AddButton/AddButton';
+// import AddButton from 'components/AddButton/AddButton';
 import CategoryList from 'components/Categories/CategoryList/CategoryList';
 import { fetchCategories } from 'redux/categories/operations';
 import { selectIsLoading } from 'redux/categories/selectors';
@@ -10,6 +10,10 @@ const styles = {
   container: {
     padding: '30px 0',
     backgroundColor: 'rgb(34, 90, 17)',
+  },
+  button: {
+    // padding: '30px 0',
+    // backgroundColor: 'rgb(34, 90, 17)',
   },
 };
 
@@ -26,7 +30,13 @@ export default function Categories() {
       <Helmet>
         <title>Categories of tasks</title>
       </Helmet>
-      <AddButton />
+      <button
+        type="button"
+        // onClick={handleOnPopup}
+        style={styles.button}
+      >
+        Add
+      </button>
       <div>{isLoading && 'Request in progress...'}</div>
       <CategoryList />
     </div>

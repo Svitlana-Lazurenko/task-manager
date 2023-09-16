@@ -1,13 +1,19 @@
 // import { useDispatch } from 'react-redux';
+
+import { useNavigate } from 'react-router-dom';
 import { Item, Text, Button, Wrapper } from './TaskItem.styled';
 
 const TaskItem = ({ id, name, description, dateStart, dateEnd }) => {
   // const dispatch = useDispatch();
+  const navigate = useNavigate();
+  // const idItem = id;
 
   const handleOnDeleteModal = () => {
     return;
   };
-  const handleOnNavigateCreateOrEditTask = () => {};
+  const handleOnNavigateEditTask = () => {
+    navigate(`/edit-task/${id}`);
+  };
 
   return (
     <Item>
@@ -19,7 +25,7 @@ const TaskItem = ({ id, name, description, dateStart, dateEnd }) => {
         <Button type="button" onClick={handleOnDeleteModal}>
           delete
         </Button>
-        <Button type="button" onClick={handleOnNavigateCreateOrEditTask}>
+        <Button type="button" onClick={handleOnNavigateEditTask}>
           edit
         </Button>
       </Wrapper>
