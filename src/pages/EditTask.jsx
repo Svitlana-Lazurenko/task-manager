@@ -1,4 +1,4 @@
-import CreateOrEditForm from 'components/CreateOrEditTaskForm/CreateOrEditTaskForm';
+import CreateOrEditTaskForm from 'components/CreateOrEditTaskForm/CreateOrEditTaskForm';
 // import Background from 'images/';
 
 const styles = {
@@ -13,7 +13,7 @@ const styles = {
 export default function CreateOrEditTask() {
   return (
     <div style={styles.container}>
-      <CreateOrEditForm />
+      <CreateOrEditTaskForm />
     </div>
   );
 }

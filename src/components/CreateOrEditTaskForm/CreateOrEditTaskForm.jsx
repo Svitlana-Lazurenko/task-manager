@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { addTask } from 'redux/tasks/operations';
+import { useParams, useLocation } from 'react-router-dom';
+import { addTask, changeTask } from 'redux/tasks/operations';
 
 import {
   Form,
@@ -12,19 +13,43 @@ import {
   InputDate,
 } from './CreateOrEditTaskForm.styled';
 
-const CreateTaskForm = () => {
+const CreateOrEditTaskForm = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
+  const location = useLocation();
+  const locationArr = location.pathname.split('/');
 
-  const handleSubmit = e => {
+  const handleSubmitNewTask = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    dispatch(
+      addTask({
+        id,
+        task: {
+          name: form.elements.name.value,
+          description: form.elements.description.value,
+          dateStart: form.elements.dateStart.value,
+          dateEnd: form.elements.dateEnd.value,
+        },
+      })
+    );
+
+    form.reset();
+  };
+
+  const handleSubmitEditingTask = e => {
     e.preventDefault();
     const form = e.currentTarget;
 
     dispatch(
-      addTask({
-        name: form.elements.name.value,
-        description: form.elements.description.value,
-        dateStart: form.elements.dateStart.value,
-        dateEnd: form.elements.dateEnd.value,
+      changeTask({
+        id,
+        task: {
+          name: form.elements.name.value,
+          description: form.elements.description.value,
+          dateStart: form.elements.dateStart.value,
+          dateEnd: form.elements.dateEnd.value,
+        },
       })
     );
 
@@ -32,7 +57,14 @@ const CreateTaskForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} autoComplete="off">
+    <Form
+      onSubmit={
+        locationArr[1] === 'create-task'
+          ? handleSubmitNewTask
+          : handleSubmitEditingTask
+      }
+      autoComplete="off"
+    >
       <Label>
         <Text> Name</Text>
         <InputText type="text" name="name" />
@@ -61,4 +93,4 @@ const CreateTaskForm = () => {
   );
 };
 
-export default CreateTaskForm;
+export default CreateOrEditTaskForm;
