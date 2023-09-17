@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/task-manager-frontend/static/css/main.7acaea2f.css",
-    "main.js": "/task-manager-frontend/static/js/main.3fcc5588.js",
+    "main.js": "/task-manager-frontend/static/js/main.56230369.js",
     "static/js/427.0f0a0d18.chunk.js": "/task-manager-frontend/static/js/427.0f0a0d18.chunk.js",
     "static/js/284.5afecc0e.chunk.js": "/task-manager-frontend/static/js/284.5afecc0e.chunk.js",
     "static/js/659.900447ec.chunk.js": "/task-manager-frontend/static/js/659.900447ec.chunk.js",
     "static/js/45.33f75a4d.chunk.js": "/task-manager-frontend/static/js/45.33f75a4d.chunk.js",
     "static/js/292.7b034578.chunk.js": "/task-manager-frontend/static/js/292.7b034578.chunk.js",
-    "static/js/322.df1f4f24.chunk.js": "/task-manager-frontend/static/js/322.df1f4f24.chunk.js",
-    "static/js/598.5c404473.chunk.js": "/task-manager-frontend/static/js/598.5c404473.chunk.js",
+    "static/js/322.c77a063f.chunk.js": "/task-manager-frontend/static/js/322.c77a063f.chunk.js",
+    "static/js/598.99afdbdf.chunk.js": "/task-manager-frontend/static/js/598.99afdbdf.chunk.js",
     "static/js/270.cdca11d3.chunk.js": "/task-manager-frontend/static/js/270.cdca11d3.chunk.js",
     "index.html": "/task-manager-frontend/index.html",
     "main.7acaea2f.css.map": "/task-manager-frontend/static/css/main.7acaea2f.css.map",
-    "main.3fcc5588.js.map": "/task-manager-frontend/static/js/main.3fcc5588.js.map",
+    "main.56230369.js.map": "/task-manager-frontend/static/js/main.56230369.js.map",
     "427.0f0a0d18.chunk.js.map": "/task-manager-frontend/static/js/427.0f0a0d18.chunk.js.map",
     "284.5afecc0e.chunk.js.map": "/task-manager-frontend/static/js/284.5afecc0e.chunk.js.map",
     "659.900447ec.chunk.js.map": "/task-manager-frontend/static/js/659.900447ec.chunk.js.map",
     "45.33f75a4d.chunk.js.map": "/task-manager-frontend/static/js/45.33f75a4d.chunk.js.map",
     "292.7b034578.chunk.js.map": "/task-manager-frontend/static/js/292.7b034578.chunk.js.map",
-    "322.df1f4f24.chunk.js.map": "/task-manager-frontend/static/js/322.df1f4f24.chunk.js.map",
-    "598.5c404473.chunk.js.map": "/task-manager-frontend/static/js/598.5c404473.chunk.js.map",
+    "322.c77a063f.chunk.js.map": "/task-manager-frontend/static/js/322.c77a063f.chunk.js.map",
+    "598.99afdbdf.chunk.js.map": "/task-manager-frontend/static/js/598.99afdbdf.chunk.js.map",
     "270.cdca11d3.chunk.js.map": "/task-manager-frontend/static/js/270.cdca11d3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.3fcc5588.js"
+    "static/js/main.56230369.js"
   ]
 }
