@@ -13,6 +13,7 @@ const CategoryItem = ({ id, name, numberOfTasks, date }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isShowMenuPopup = useSelector(selectIsShowMenuPopup);
+  const dateArr = date.split('T');
 
   const handleOnNavigateTasks = () => {
     navigate(`/tasks/${id}`);
@@ -29,7 +30,7 @@ const CategoryItem = ({ id, name, numberOfTasks, date }) => {
     <Item>
       <Text>{name}</Text>
       <Text>{numberOfTasks}</Text>
-      <Text>{date}</Text>
+      <Text>{dateArr[0]}</Text>
       <Wrapper>
         <Button type="button" onClick={handleOnPopup}>
           actions
