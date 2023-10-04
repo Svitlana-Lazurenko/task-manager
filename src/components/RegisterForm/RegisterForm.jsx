@@ -8,27 +8,25 @@ const RegisterForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-
     dispatch(
       register({
-        name: form.elements.name.value,
+        role: form.elements.role.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
     );
-
     form.reset();
   };
 
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">
       <Label>
-        <Text> Username</Text>
-        <Input type="text" name="name" placeholder="Thomas A. Anderson" />
+        <Text> Role</Text>
+        <Input type="text" name="role" />
       </Label>
       <Label>
         <Text> Email</Text>
-        <Input type="email" name="email" placeholder="anderson@mail.com" />
+        <Input type="email" name="email" />
       </Label>
       <Label>
         <Text> Password</Text>

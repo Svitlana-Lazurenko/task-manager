@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from 'redux/auth/slice';
 import { tasksReducer } from 'redux/tasks/slice';
 import { categoriesReducer } from 'redux/categories/slice';
+import { popupReducer } from 'redux/popup/slice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -25,6 +26,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     categories: categoriesReducer,
     tasks: tasksReducer,
+    popup: popupReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

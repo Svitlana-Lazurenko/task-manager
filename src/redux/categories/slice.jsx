@@ -21,11 +21,22 @@ const categoriesInitialState = {
   categoriesArr: [],
   isLoading: false,
   error: null,
+  currentCategoryId: null,
+  currentCategoryName: '',
 };
 
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState: categoriesInitialState,
+
+  reducers: {
+    setCurrentCategoryId(state, action) {
+      state.currentCategoryId = action.payload;
+    },
+    setCurrentCategoryName(state, action) {
+      state.currentCategoryName = action.payload;
+    },
+  },
 
   extraReducers: builder => {
     builder
@@ -61,15 +72,12 @@ const categoriesSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const currentCategory = action.payload;
-        const newCategory = state.categoriesArr.map(contact =>
-          contact.id === currentCategory.id
-            ? {
-                id: contact.id,
-                name: currentCategory.name,
-              }
-            : contact
-        );
-        state.contactsArr = newCategory;
+        const newCategories = state.categoriesArr.map(category => {
+          return category._id === currentCategory._id
+            ? currentCategory
+            : category;
+        });
+        state.categoriesArr = newCategories;
       })
       .addCase(changeCategory.rejected, handleRejected)
 
@@ -81,5 +89,11 @@ const categoriesSlice = createSlice({
   },
 });
 
-export const { turnOnEditMode, turnOffEditMode } = categoriesSlice.actions;
+export const {
+  turnOnEditMode,
+  turnOffEditMode,
+  setCurrentCategoryId,
+  setCurrentCategoryName,
+} = categoriesSlice.actions;
+
 export const categoriesReducer = categoriesSlice.reducer;

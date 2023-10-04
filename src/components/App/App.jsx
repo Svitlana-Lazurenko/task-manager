@@ -1,8 +1,9 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { refreshUser } from 'redux/auth/operations';
+
 import { useAuth } from 'hooks';
+import { refreshUser } from 'redux/auth/operations';
 import Layout from './Layout';
 import PrivateRoute from './PrivateRoute';
 import RestrictedRoute from './RestrictedRoute';
@@ -14,6 +15,7 @@ const CategoriesPage = lazy(() => import('../../pages/Categories'));
 const TasksPage = lazy(() => import('../../pages/Tasks'));
 const CreateTaskPage = lazy(() => import('../../pages/CreateTask'));
 const EditTaskPage = lazy(() => import('../../pages/EditTask'));
+const NotFound = lazy(() => import('../../pages/NotFound'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -53,7 +55,6 @@ const App = () => {
             <PrivateRoute redirectTo="/login" component={<CategoriesPage />} />
           }
         />
-
         <Route
           path="/tasks/:id"
           element={
@@ -73,6 +74,7 @@ const App = () => {
           }
         />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

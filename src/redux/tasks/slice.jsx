@@ -16,11 +16,22 @@ const tasksInitialState = {
   tasksArr: [],
   isLoading: false,
   error: null,
+  currentTaskId: null,
+  currentTask: {},
 };
 
 const tasksSlice = createSlice({
   name: 'tasks',
   initialState: tasksInitialState,
+
+  reducers: {
+    setCurrentTaskId(state, action) {
+      state.currentTaskId = action.payload;
+    },
+    setCurrentTask(state, action) {
+      state.currentTask = action.payload;
+    },
+  },
 
   extraReducers: builder => {
     builder
@@ -57,17 +68,9 @@ const tasksSlice = createSlice({
         state.error = null;
         const currentTask = action.payload;
         const newTasks = state.tasksArr.map(task =>
-          task.id === currentTask.id
-            ? {
-                id: task.id,
-                name: currentTask.name,
-                description: currentTask.description,
-                dateStart: currentTask.dateStart,
-                dateEnd: currentTask.dateEnd,
-              }
-            : task
+          task.id === currentTask.id ? currentTask : task
         );
-        state.contactsArr = newTasks;
+        state.tasksArr = newTasks;
       })
       .addCase(changeTask.rejected, handleRejected)
 
@@ -79,5 +82,11 @@ const tasksSlice = createSlice({
   },
 });
 
-export const { turnOnEditMode, turnOffEditMode } = tasksSlice.actions;
+export const {
+  turnOnEditMode,
+  turnOffEditMode,
+  setCurrentTaskId,
+  setCurrentTask,
+} = tasksSlice.actions;
+
 export const tasksReducer = tasksSlice.reducer;

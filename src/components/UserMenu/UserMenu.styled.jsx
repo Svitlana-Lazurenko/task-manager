@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   gap: 12px;
 `;
 
-export const Useremail = styled.p`
+export const UserEmail = styled.p`
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 4px;

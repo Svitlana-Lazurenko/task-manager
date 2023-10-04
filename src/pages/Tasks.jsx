@@ -1,46 +1,48 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-// import { Helmet } from 'react-helmet';
-// import AddButton from 'components/AddButton/AddButton';
 import TaskList from 'components/Tasks/TaskList/TaskList';
+import Popup from 'components/Popup/Popup';
 import { fetchTasks } from 'redux/tasks/operations';
 import { selectIsLoading } from 'redux/tasks/selectors';
+import { selectIsShowDeleteTaskPopup } from 'redux/popup/selectors';
 
 const styles = {
   container: {
     padding: '30px 0',
     backgroundColor: 'rgb(34, 90, 17)',
   },
-  button: {
-    // padding: '30px 0',
-    // backgroundColor: 'rgb(34, 90, 17)',
-  },
+  button: {},
 };
 
 export default function Tasks() {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
   const navigate = useNavigate();
   const { id } = useParams();
-  // const currentCategory =
-  // const nameOfCategory =
+  const isShowDeleteTaskPopup = useSelector(selectIsShowDeleteTaskPopup);
+  const isLoading = useSelector(selectIsLoading);
 
-  const handleOnNavigateCreateTask = () => {
-    navigate(`/create-task/${id}`);
-  };
   useEffect(() => {
     dispatch(fetchTasks(id));
   }, [dispatch, id]);
 
+  const handleOnNavigateCreateTask = () => {
+    navigate(`/create-task/${id}`);
+  };
+
+  const handleOnNavigateCategories = () => {
+    navigate('/categories');
+  };
+
   return (
     <div style={styles.container}>
-      {/* <Helmet>
-        <title>{nameOfCategory}</title>
-      </Helmet> */}
-      {/* <Button type="button" onClick={handleOnNavigateCreateTask}> */}
-      {/* Add
-      </Button> */}
+      <button
+        type="button"
+        onClick={handleOnNavigateCategories}
+        style={styles.button}
+      >
+        Back
+      </button>
       <button
         type="button"
         onClick={handleOnNavigateCreateTask}
@@ -50,6 +52,7 @@ export default function Tasks() {
       </button>
       <div>{isLoading && 'Request in progress...'}</div>
       <TaskList />
+      {isShowDeleteTaskPopup && <Popup></Popup>}
     </div>
   );
 }

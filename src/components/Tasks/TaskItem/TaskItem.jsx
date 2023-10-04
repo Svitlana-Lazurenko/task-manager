@@ -1,17 +1,20 @@
-// import { useDispatch } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Item, Text, Button, Wrapper } from './TaskItem.styled';
+import { setStatusDeleteTaskPopup } from 'redux/popup/slice';
+import { setCurrentTaskId, setCurrentTask } from 'redux/tasks/slice';
 
 const TaskItem = ({ id, name, description, dateStart, dateEnd }) => {
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const idItem = id;
+  const dispatch = useDispatch();
 
-  const handleOnDeleteModal = () => {
-    return;
+  const handleOnPopup = () => {
+    dispatch(setStatusDeleteTaskPopup(true));
+    dispatch(setCurrentTaskId(id));
   };
+
   const handleOnNavigateEditTask = () => {
+    dispatch(setCurrentTask({ id, name, description, dateStart, dateEnd }));
     navigate(`/edit-task/${id}`);
   };
 
@@ -22,7 +25,7 @@ const TaskItem = ({ id, name, description, dateStart, dateEnd }) => {
       <Text>{dateStart}</Text>
       <Text>{dateEnd}</Text>
       <Wrapper>
-        <Button type="button" onClick={handleOnDeleteModal}>
+        <Button type="button" onClick={handleOnPopup}>
           delete
         </Button>
         <Button type="button" onClick={handleOnNavigateEditTask}>
