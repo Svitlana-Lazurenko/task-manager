@@ -62,10 +62,10 @@ const CreateOrEditTaskForm = () => {
       addTask({
         id,
         task: {
-          name: form.elements.name.value,
-          description: form.elements.description.value,
-          dateStart: form.elements.dateStart.value,
-          dateEnd: form.elements.dateEnd.value,
+          name: form.elements.name.value.trim(),
+          description: form.elements.description.value.trim(),
+          dateStart: form.elements.dateStart.value.trim(),
+          dateEnd: form.elements.dateEnd.value.trim(),
         },
       })
     );
@@ -80,10 +80,10 @@ const CreateOrEditTaskForm = () => {
       changeTask({
         id,
         task: {
-          name: form.elements.name.value,
-          description: form.elements.description.value,
-          dateStart: form.elements.dateStart.value,
-          dateEnd: form.elements.dateEnd.value,
+          name: form.elements.name.value.trim(),
+          description: form.elements.description.value.trim(),
+          dateStart: form.elements.dateStart.value.trim(),
+          dateEnd: form.elements.dateEnd.value.trim(),
         },
       })
     );

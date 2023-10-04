@@ -10,8 +10,8 @@ const LoginForm = () => {
     const form = e.currentTarget;
     dispatch(
       logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        email: form.elements.email.value.trim(),
+        password: form.elements.password.value.trim(),
       })
     );
     form.reset();

@@ -98,7 +98,7 @@ const Popup = () => {
   const handleSubmitNewCategory = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    const name = form.elements.name.value;
+    const name = form.elements.name.value.trim();
     dispatch(addCategory({ name }));
     form.reset();
     resetState();
@@ -107,7 +107,7 @@ const Popup = () => {
   const handleSubmitEditedCategory = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    const name = form.elements.name.value;
+    const name = form.elements.name.value.trim();
     dispatch(
       changeCategory({
         id: categoryId,

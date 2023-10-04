@@ -10,9 +10,9 @@ const RegisterForm = () => {
     const form = e.currentTarget;
     dispatch(
       register({
-        role: form.elements.role.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        role: form.elements.role.value.trim(),
+        email: form.elements.email.value.trim(),
+        password: form.elements.password.value.trim(),
       })
     );
     form.reset();
