@@ -5,7 +5,7 @@ This is the frontend part of the application. The backend is located [here](http
 
 Used Java Script, React, Redux, react hooks, Axios. Styles written using the library Emotion.
 
-The application supports login and registration.
+The application supports login and registration. Authorization uses JWT (using localstorage).
 Implemented creation, editing and deletion of task categories.
 Implemented creation, editing and deletion of tasks.
 
