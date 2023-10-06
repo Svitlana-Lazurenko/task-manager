@@ -51,8 +51,8 @@ const Popup = () => {
   const isShowAddCategoryPopup = useSelector(selectIsShowAddCategoryPopup);
   const isShowEditCategoryPopup = useSelector(selectIsShowEditCategoryPopup);
   const isShowMenuPopup = useSelector(selectIsShowMenuPopup);
-  const categoryId = useSelector(selectCurrentCategoryId);
   const categoryName = useSelector(selectCurrentCategoryName);
+  const categoryId = useSelector(selectCurrentCategoryId);
   const taskId = useSelector(selectCurrentTaskId);
 
   const dispatch = useDispatch();
@@ -95,12 +95,12 @@ const Popup = () => {
     resetState();
   };
 
-  const handleOnEditCategory = e => {
+  const handleOnEditCategoryPopup = e => {
     dispatch(setStatusMenuPopup(false));
     dispatch(setStatusEditCategoryPopup(true));
   };
 
-  const handleOnDeleteCategory = e => {
+  const handleOnDeleteCategoryPopup = e => {
     dispatch(setStatusMenuPopup(false));
     dispatch(setStatusDeleteCategoryPopup(true));
   };
@@ -146,10 +146,10 @@ const Popup = () => {
         {isShowMenuPopup && (
           <Container>
             <Wrapper>
-              <Button type="button" onClick={handleOnEditCategory}>
+              <Button type="button" onClick={handleOnEditCategoryPopup}>
                 Edit
               </Button>
-              <Button type="button" onClick={handleOnDeleteCategory}>
+              <Button type="button" onClick={handleOnDeleteCategoryPopup}>
                 Delete
               </Button>
             </Wrapper>

@@ -39,7 +39,16 @@ const tasksSlice = createSlice({
       .addCase(fetchTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.tasksArr = action.payload.tasks;
+        const tasks = action.payload.tasks;
+        state.tasksArr = [...tasks].sort(function (a, b) {
+          if (a.date < b.date) {
+            return 1;
+          }
+          if (a.date > b.date) {
+            return -1;
+          }
+          return 0;
+        });
       })
       .addCase(fetchTasks.rejected, handleRejected)
 
@@ -56,7 +65,7 @@ const tasksSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.tasksArr.findIndex(
-          task => task.id === action.payload.id
+          task => task._id === action.payload._id
         );
         state.tasksArr.splice(index, 1);
       })

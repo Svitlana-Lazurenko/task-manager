@@ -60,9 +60,10 @@ const categoriesSlice = createSlice({
       .addCase(deleteCategory.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        const index = state.categoriesArr.findIndex(
-          contact => contact.id === action.payload.id
-        );
+        const index = state.categoriesArr.findIndex(category => {
+          return category._id === action.payload._id;
+        });
+
         state.categoriesArr.splice(index, 1);
       })
       .addCase(deleteCategory.rejected, handleRejected)
