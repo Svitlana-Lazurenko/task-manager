@@ -1,7 +1,7 @@
 # Task manager
 
 Task manager for manage company personal.
-This is the frontend part of the application. [Backend](https://github.com/Svitlana-Lazurenko/task-manager-backend).
+This is the frontend part of the application. The backend is located [here](https://github.com/Svitlana-Lazurenko/task-manager-backend).
 
 Used Java Script, React, Redux, react hooks, Axios. Styles written using the library Emotion.
 
