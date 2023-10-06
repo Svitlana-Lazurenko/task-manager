@@ -6,8 +6,9 @@ This is the frontend part of the application. The backend is located [here](http
 - The application supports login and registration. Authorization uses JWT (using localstorage).
 - Implemented creation, editing and deletion of task categories.
 - Implemented creation, editing and deletion of tasks.
+- The application uses a database MongoDB.
   
-Used 
+Frontend uses:
 - Java Script
 - React
 - Redux
