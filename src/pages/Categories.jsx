@@ -14,9 +14,26 @@ import { selectIsLoading } from 'redux/categories/selectors';
 const styles = {
   container: {
     padding: '30px 0',
-    backgroundColor: 'rgb(34, 90, 17)',
   },
-  button: {},
+  button: {
+    height: 40,
+    margin: '30px auto 0',
+    padding: '10px 20px',
+
+    display: 'block',
+    overflow: 'hidden',
+
+    backgroundColor: 'rgb(193, 255, 252)',
+    border: '2px solid rgb(2, 211, 200)',
+    borderRadius: 10,
+
+    color: 'rgb(125, 202, 0)',
+    fontSize: 15,
+    fontWeight: 600,
+
+    textTransform: 'uppercase',
+    letterSpacing: 6,
+  },
 };
 
 export default function Categories() {
@@ -38,12 +55,11 @@ export default function Categories() {
 
   return (
     <div style={styles.container}>
-      <title>Categories of tasks</title>
+      <div>{isLoading && 'Request in progress...'}</div>
+      <CategoryList />
       <button type="button" style={styles.button} onClick={handleOnAddCategory}>
         Add
       </button>
-      <div>{isLoading && 'Request in progress...'}</div>
-      <CategoryList />
       {isShowDeleteCategoryPopup && <Popup></Popup>}
       {isShowEditCategoryPopup && <Popup></Popup>}
       {isShowAddCategoryPopup && <Popup></Popup>}

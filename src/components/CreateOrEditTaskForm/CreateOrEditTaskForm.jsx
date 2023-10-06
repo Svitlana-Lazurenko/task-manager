@@ -9,7 +9,6 @@ import {
   Form,
   Label,
   Button,
-  Span,
   Text,
   InputText,
   InputTextArea,
@@ -113,7 +112,6 @@ const CreateOrEditTaskForm = () => {
         <Text> Description</Text>
         <InputTextArea
           name="description"
-          placeholder="Enter description of task here..."
           rows="5"
           value={description}
           onChange={handleChangeDescription}
@@ -137,10 +135,7 @@ const CreateOrEditTaskForm = () => {
           onChange={handleChangeDateEnd}
         />
       </Label>
-      <Button type="submit">
-        Save
-        <Span />
-      </Button>
+      <Button type="submit">Save</Button>
     </Form>
   );
 };

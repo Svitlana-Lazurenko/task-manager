@@ -31,7 +31,17 @@ import {
   changeCategory,
   addCategory,
 } from 'redux/categories/operations';
-import { PopupBackdrop, PopupContent } from './Popup.styled';
+import {
+  PopupBackdrop,
+  PopupContent,
+  Container,
+  Button,
+  Text,
+  TextName,
+  Form,
+  Input,
+  Wrapper,
+} from './Popup.styled';
 
 const Popup = () => {
   const isShowDeleteTaskPopup = useSelector(selectIsShowDeleteTaskPopup);
@@ -134,82 +144,87 @@ const Popup = () => {
     <PopupBackdrop onClick={handleBackdropClick}>
       <PopupContent>
         {isShowMenuPopup && (
-          <div>
-            <button type="button" onClick={handleOnEditCategory}>
-              Edit
-            </button>
-            <button type="button" onClick={handleOnDeleteCategory}>
-              Delete
-            </button>
-          </div>
+          <Container>
+            <Wrapper>
+              <Button type="button" onClick={handleOnEditCategory}>
+                Edit
+              </Button>
+              <Button type="button" onClick={handleOnDeleteCategory}>
+                Delete
+              </Button>
+            </Wrapper>
+          </Container>
         )}
         {isShowDeleteCategoryPopup && (
-          <div>
-            <span>Do you want to delete this category ?</span>
-            <button type="button" onClick={handleSubmitDeletedCategory}>
-              yes
-            </button>
-            <button type="button" onClick={handleCloseClick}>
-              no
-            </button>
-          </div>
+          <Container>
+            <Text>Do you want to delete this category ?</Text>
+            <Wrapper>
+              <Button type="button" onClick={handleSubmitDeletedCategory}>
+                yes
+              </Button>
+              <Button type="button" onClick={handleCloseClick}>
+                no
+              </Button>
+            </Wrapper>
+          </Container>
         )}
         {isShowEditCategoryPopup && (
-          <div>
-            <form onSubmit={handleSubmitEditedCategory}>
+          <Container>
+            <Form onSubmit={handleSubmitEditedCategory}>
+              <Text>Edit {categoryName} category</Text>
               <label>
-                <span>Edit {categoryName} category</span>
-                <input
+                <TextName>name: </TextName>
+                <Input
                   name="name"
                   type="text"
                   value={name}
                   onChange={handleChange}
                 />
               </label>
-              <button type="submit">save</button>
-              <button type="button" onClick={handleCloseClick}>
-                cancel
-              </button>
-            </form>
-          </div>
+              <Wrapper>
+                <Button type="submit">save</Button>
+                <Button type="button" onClick={handleCloseClick}>
+                  cancel
+                </Button>
+              </Wrapper>
+            </Form>
+          </Container>
         )}
         {isShowAddCategoryPopup && (
-          <div>
-            <form onSubmit={handleSubmitNewCategory}>
+          <Container>
+            <Form onSubmit={handleSubmitNewCategory}>
+              <Text>Add new category</Text>
               <label>
-                <span>Add new category</span>
-                <input
+                <TextName>name: </TextName>
+                <Input
                   name="name"
                   type="text"
                   value={name}
                   onChange={handleChange}
                 />
               </label>
-              <button type="submit">save</button>
-              <button type="button" onClick={handleCloseClick}>
-                cancel
-              </button>
-            </form>
-          </div>
+              <Wrapper>
+                <Button type="submit">save</Button>
+                <Button type="button" onClick={handleCloseClick}>
+                  cancel
+                </Button>
+              </Wrapper>
+            </Form>
+          </Container>
         )}
         {isShowDeleteTaskPopup && (
-          <div>
-            <span>Do you want to delete this task ?</span>
-            <button type="button" onClick={handleSubmitDeletedTask}>
-              yes
-            </button>
-            <button type="button" onClick={handleCloseClick}>
-              no
-            </button>
-          </div>
+          <Container>
+            <Text>Do you want to delete this task ?</Text>
+            <Wrapper>
+              <Button type="button" onClick={handleSubmitDeletedTask}>
+                yes
+              </Button>
+              <Button type="button" onClick={handleCloseClick}>
+                no
+              </Button>
+            </Wrapper>
+          </Container>
         )}
-        <button
-          type="button"
-          onClick={handleCloseClick}
-          className="Popup__close"
-        >
-          close
-        </button>
       </PopupContent>
     </PopupBackdrop>,
     document.querySelector('#task-popup-root')

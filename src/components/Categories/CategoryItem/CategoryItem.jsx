@@ -1,6 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Item, Text, Button, Wrapper } from './CategoryItem.styled';
+import {
+  Item,
+  Text,
+  TextNumber,
+  TextDate,
+  Button,
+  Wrapper,
+} from './CategoryItem.styled';
 import Popup from 'components/Popup/Popup';
 import { setStatusMenuPopup } from 'redux/popup/slice';
 import { selectIsShowMenuPopup } from 'redux/popup/selectors';
@@ -29,9 +36,10 @@ const CategoryItem = ({ id, name, numberOfTasks, date }) => {
   return (
     <Item>
       <Text>{name}</Text>
-      <Text>{numberOfTasks}</Text>
-      <Text>{dateArr[0]}</Text>
+
       <Wrapper>
+        <TextNumber>{numberOfTasks} tasks |</TextNumber>
+        <TextDate>{dateArr[0]}</TextDate>
         <Button type="button" onClick={handleOnPopup}>
           actions
         </Button>

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { selectError } from 'redux/auth/selectors';
-import { Form, Label, Input, Button, Span, Text } from './RegisterForm.styled';
+import { Form, Label, Input, Button, Text } from './RegisterForm.styled';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -35,10 +35,7 @@ const RegisterForm = () => {
         <Input type="password" name="password" />
       </Label>
       {error && <Text>{error}</Text>}
-      <Button type="submit">
-        Register
-        <Span />
-      </Button>
+      <Button type="submit">Register</Button>
     </Form>
   );
 };

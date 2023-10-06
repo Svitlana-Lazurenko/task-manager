@@ -8,10 +8,10 @@ export const Link = styled(NavLink)`
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 4px;
-  color: rgb(240, 240, 240);
+  color: rgb(141, 247, 241);
   text-decoration: none;
 
   &.active {
-    color: rgb(53, 202, 8);
+    color: rgb(2, 211, 200);
   }
 `;

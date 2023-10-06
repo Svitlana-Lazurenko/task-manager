@@ -10,9 +10,24 @@ import { selectIsShowDeleteTaskPopup } from 'redux/popup/selectors';
 const styles = {
   container: {
     padding: '30px 0',
-    backgroundColor: 'rgb(34, 90, 17)',
   },
-  button: {},
+  button: {
+    height: 40,
+
+    padding: '10px 20px',
+    display: 'block',
+    overflow: 'hidden',
+
+    border: '2px solid rgb(2, 211, 200)',
+    borderRadius: 10,
+
+    color: 'rgb(125, 202, 0)',
+    fontSize: 15,
+    fontWeight: 600,
+
+    textTransform: 'uppercase',
+    letterSpacing: 6,
+  },
 };
 
 export default function Tasks() {
@@ -39,19 +54,28 @@ export default function Tasks() {
       <button
         type="button"
         onClick={handleOnNavigateCategories}
-        style={styles.button}
+        style={{
+          ...styles.button,
+          marginBottom: '10px',
+          marginLeft: '25px',
+          backgroundColor: 'transparent',
+        }}
       >
         Back
       </button>
+      <div>{isLoading && 'Request in progress...'}</div>
+      <TaskList />
       <button
         type="button"
         onClick={handleOnNavigateCreateTask}
-        style={styles.button}
+        style={{
+          ...styles.button,
+          margin: '30px auto 0',
+          backgroundColor: 'rgb(193, 255, 252)',
+        }}
       >
         Add
       </button>
-      <div>{isLoading && 'Request in progress...'}</div>
-      <TaskList />
       {isShowDeleteTaskPopup && <Popup></Popup>}
     </div>
   );

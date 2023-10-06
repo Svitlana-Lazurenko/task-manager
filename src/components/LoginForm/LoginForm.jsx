@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
-import { Form, Label, Input, Button, Span, Text } from './LoginForm.styled';
+import { Form, Label, Input, Button, Text } from './LoginForm.styled';
 import { selectError } from 'redux/auth/selectors';
 
 const LoginForm = () => {
@@ -30,10 +30,7 @@ const LoginForm = () => {
         <Input type="password" name="password" />
       </Label>
       {error && <Text>{error}</Text>}
-      <Button type="submit">
-        Log In
-        <Span />
-      </Button>
+      <Button type="submit">Log In</Button>
     </Form>
   );
 };

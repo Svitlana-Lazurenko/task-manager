@@ -9,9 +9,9 @@ export const Form = styled.form`
   padding: 40px 40px 60px 40px;
   margin: 0 auto;
 
-  background-color: rgb(8, 8, 8);
+  background-color: rgb(255, 249, 198);
   border-radius: 10px;
-  border: 2px solid rgb(53, 202, 8);
+  border: 2px solid rgb(2, 211, 200);
 `;
 
 export const Label = styled.label`
@@ -37,13 +37,10 @@ export const Input = styled.input`
 
   background: transparent;
   border-radius: 10px;
-  border: 2px solid rgb(53, 202, 8);
-  outline-color: rgb(53, 202, 8);
+  border: 2px solid rgb(2, 211, 200);
+  outline-color: rgb(255, 224, 45);
 
   font-size: 20px;
-  color: rgb(240, 240, 240);
-  text-shadow: 0 0 1em rgb(53, 202, 8);
-  font-family: monospace;
   letter-spacing: 5px;
 `;
 
@@ -54,49 +51,20 @@ export const Button = styled.button`
 
   display: block;
   overflow: hidden;
-  position: relative;
-  transition: 0.5s;
 
   background-color: transparent;
   border: none;
 
-  color: rgb(240, 240, 240);
-  text-shadow: 0 0 1em rgb(53, 202, 8);
+  color: rgb(128, 218, 11);
   font-size: 15px;
-  font-family: monospace;
+  font-weight: 600;
+
   text-transform: uppercase;
   letter-spacing: 6px;
 
   :hover {
-    background: rgb(3, 244, 15);
-    color: rgb(240, 240, 240);
+    background: rgb(193, 255, 252);
     border-radius: 5px;
-    box-shadow: 0 0 5px rgb(3, 244, 15), 0 0 25px rgb(3, 244, 15),
-      0 0 50px rgb(3, 244, 15), 0 0 100px rgb(3, 244, 15);
-  }
-`;
-
-export const Span = styled.span`
-  position: absolute;
-  display: block;
-
-  @keyframes btn-anim {
-    0% {
-      left: -100%;
-    }
-
-    50%,
-    100% {
-      left: 100%;
-    }
-  }
-
-  :first-of-type {
-    bottom: 2px;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgb(3, 244, 15));
-    animation: btn-anim 2s linear infinite;
+    border: 2px solid rgb(2, 211, 200);
   }
 `;

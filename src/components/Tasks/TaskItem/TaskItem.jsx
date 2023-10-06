@@ -1,6 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Item, Text, Button, Wrapper } from './TaskItem.styled';
+import {
+  Item,
+  Text,
+  TextDate,
+  TextName,
+  Button,
+  Wrapper,
+} from './TaskItem.styled';
 import { setStatusDeleteTaskPopup } from 'redux/popup/slice';
 import { setCurrentTaskId, setCurrentTask } from 'redux/tasks/slice';
 
@@ -20,10 +27,10 @@ const TaskItem = ({ id, name, description, dateStart, dateEnd }) => {
 
   return (
     <Item>
-      <Text>{name}</Text>
+      <TextName>{name}</TextName>
       <Text>{description}</Text>
-      <Text>{dateStart}</Text>
-      <Text>{dateEnd}</Text>
+      <TextDate>date of start: {dateStart}</TextDate>
+      <TextDate>date of end: {dateEnd}</TextDate>
       <Wrapper>
         <Button type="button" onClick={handleOnPopup}>
           delete
