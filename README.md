@@ -15,3 +15,7 @@ Frontend uses:
 - react hooks
 - Axios
 - Styles written using the library Emotion
+
+## Status
+
+Project is in progress.
