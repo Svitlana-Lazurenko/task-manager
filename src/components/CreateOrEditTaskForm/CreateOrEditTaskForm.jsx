@@ -5,6 +5,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { addTask, changeTask } from 'redux/tasks/operations';
 import { selectCurrentTask } from 'redux/tasks/selectors';
 import { selectCurrentCategoryId } from 'redux/categories/selectors';
+import { setCurrentTaskId, setCurrentTask } from 'redux/tasks/slice';
 import {
   Form,
   Label,
@@ -88,6 +89,8 @@ const CreateOrEditTaskForm = () => {
     );
     form.reset();
     navigate(`/tasks/${categoryId}`);
+    dispatch(setCurrentTask(null));
+    dispatch(setCurrentTaskId({}));
   };
 
   return (

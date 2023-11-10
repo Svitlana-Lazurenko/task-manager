@@ -90,11 +90,7 @@ const categoriesSlice = createSlice({
   },
 });
 
-export const {
-  turnOnEditMode,
-  turnOffEditMode,
-  setCurrentCategoryId,
-  setCurrentCategoryName,
-} = categoriesSlice.actions;
+export const { setCurrentCategoryId, setCurrentCategoryName } =
+  categoriesSlice.actions;
 
 export const categoriesReducer = categoriesSlice.reducer;

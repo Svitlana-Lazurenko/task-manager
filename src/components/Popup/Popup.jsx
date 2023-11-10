@@ -58,7 +58,7 @@ const Popup = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState(categoryName);
 
-  const resetState = useCallback(() => {
+  const totalResetState = useCallback(() => {
     dispatch(setStatusDeleteTaskPopup(false));
     dispatch(setStatusDeleteCategoryPopup(false));
     dispatch(setStatusEditCategoryPopup(false));
@@ -69,17 +69,27 @@ const Popup = () => {
     dispatch(setCurrentCategoryName(''));
   }, [dispatch]);
 
+  const resetState = useCallback(() => {
+    dispatch(setStatusDeleteTaskPopup(false));
+    dispatch(setStatusDeleteCategoryPopup(false));
+    dispatch(setStatusEditCategoryPopup(false));
+    dispatch(setStatusAddCategoryPopup(false));
+    dispatch(setStatusMenuPopup(false));
+    dispatch(setCurrentTaskId(null));
+    dispatch(setCurrentCategoryName(''));
+  }, [dispatch]);
+
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
-        resetState();
+        totalResetState();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [dispatch, resetState]);
+  }, [dispatch, totalResetState]);
 
   const handleChange = e => {
     setName(e.target.value);
@@ -87,12 +97,12 @@ const Popup = () => {
 
   const handleBackdropClick = e => {
     if (e.currentTarget === e.target) {
-      resetState();
+      totalResetState();
     }
   };
 
   const handleCloseClick = () => {
-    resetState();
+    totalResetState();
   };
 
   const handleOnEditCategoryPopup = e => {
@@ -111,7 +121,7 @@ const Popup = () => {
     const name = form.elements.name.value.trim();
     dispatch(addCategory({ name }));
     form.reset();
-    resetState();
+    totalResetState();
   };
 
   const handleSubmitEditedCategory = e => {
@@ -125,13 +135,13 @@ const Popup = () => {
       })
     );
     form.reset();
-    resetState();
+    totalResetState();
   };
 
   const handleSubmitDeletedCategory = e => {
     e.preventDefault();
     dispatch(deleteCategory(categoryId));
-    resetState();
+    totalResetState();
   };
 
   const handleSubmitDeletedTask = e => {

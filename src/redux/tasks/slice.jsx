@@ -77,7 +77,7 @@ const tasksSlice = createSlice({
         state.error = null;
         const currentTask = action.payload;
         const newTasks = state.tasksArr.map(task =>
-          task.id === currentTask.id ? currentTask : task
+          task._id === currentTask._id ? currentTask : task
         );
         state.tasksArr = newTasks;
       })

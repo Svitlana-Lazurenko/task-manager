@@ -6,6 +6,7 @@ import Popup from 'components/Popup/Popup';
 import { fetchTasks } from 'redux/tasks/operations';
 import { selectIsLoading } from 'redux/tasks/selectors';
 import { selectIsShowDeleteTaskPopup } from 'redux/popup/selectors';
+import { setCurrentCategoryId } from 'redux/categories/slice';
 
 const styles = {
   container: {
@@ -47,6 +48,7 @@ export default function Tasks() {
 
   const handleOnNavigateCategories = () => {
     navigate('/categories');
+    dispatch(setCurrentCategoryId(null));
   };
 
   return (
